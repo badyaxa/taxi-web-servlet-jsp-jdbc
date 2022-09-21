@@ -21,8 +21,8 @@ public class ManufacturerDaoImpl implements ManufacturerDao {
                 PreparedStatement createManufacturerStatement =
                         connection.prepareStatement(insertManufacturerRequest,
                                 Statement.RETURN_GENERATED_KEYS)) {
-            createManufacturerStatement.setString(1,manufacturer.getName());
-            createManufacturerStatement.setString(2,manufacturer.getCountry());
+            createManufacturerStatement.setString(1, manufacturer.getName());
+            createManufacturerStatement.setString(2, manufacturer.getCountry());
             createManufacturerStatement.executeUpdate();
             ResultSet generatedKeys = createManufacturerStatement.getGeneratedKeys();
             if (generatedKeys.next()) {
@@ -48,15 +48,17 @@ public class ManufacturerDaoImpl implements ManufacturerDao {
             ResultSet resultSet = getAllManufacturersStatement
                     .executeQuery("SELECT * FROM manufacturers");
             while (resultSet.next()) {
-                Long id = resultSet.getObject("id", Long.class);
                 String name = resultSet.getString("name");
                 String country = resultSet.getString("country");
                 Manufacturer manufacturer = new Manufacturer(name, country);
+                Long id = resultSet.getObject("id", Long.class);
                 manufacturer.setId(id);
+                boolean isDeleted = resultSet.getBoolean("is_deleted");
+                manufacturer.setDeleted(isDeleted);
                 allManufacturers.add(manufacturer);
             }
         } catch (SQLException e) {
-            throw new RuntimeException("Can't ", e);
+            throw new RuntimeException("Can't get all manufacturers from DB", e);
         }
         return allManufacturers;
     }

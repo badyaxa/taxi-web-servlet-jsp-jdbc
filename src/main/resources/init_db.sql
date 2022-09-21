@@ -52,3 +52,7 @@ UNLOCK TABLES;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
 -- Dump completed on 2022-09-06 19:08:04
+
+
+ALTER TABLE `taxi_service_db`.`manufacturers`
+ADD COLUMN `is_deleted` TINYINT NOT NULL DEFAULT 0 AFTER `country`;

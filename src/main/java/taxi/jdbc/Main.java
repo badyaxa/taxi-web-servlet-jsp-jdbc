@@ -10,10 +10,14 @@ public class Main {
         ManufacturerDao manufacturerDao = new ManufacturerDaoImpl();
         List<Manufacturer> manufacturers = manufacturerDao.getAll();
         for (Manufacturer manufacturer : manufacturers) {
-            System.out.println(manufacturer);
+            if (!manufacturer.isDeleted()){
+                System.out.println(manufacturer);
+            }
         }
+        ///////////////////////////////////////////////
         Manufacturer savedManufacturer = manufacturerDao
                 .create(new Manufacturer("Ntesr2", "Ctest2"));
         System.out.println("savedManufacturer = " + savedManufacturer);
+        ///////////////////////////////////////////////
     }
 }
