@@ -1,16 +1,13 @@
 package taxi.model;
 
+import java.util.List;
 import java.util.Objects;
-import java.util.Set;
 
 public class Car {
     private Long id;
     private String model;
     private Manufacturer manufacturer;
-    private Set<Driver> drivers;
-
-    public Car() {
-    }
+    private List<Driver> drivers;
 
     public Long getId() {
         return id;
@@ -36,12 +33,22 @@ public class Car {
         this.manufacturer = manufacturer;
     }
 
-    public Set<Driver> getDrivers() {
+    public List<Driver> getDrivers() {
         return drivers;
     }
 
-    public void setDrivers(Set<Driver> drivers) {
+    public void setDrivers(List<Driver> drivers) {
         this.drivers = drivers;
+    }
+
+    @Override
+    public String toString() {
+        return "Car{"
+                + "id=" + id
+                + ", model='" + model + '\''
+                + ", manufacturer=" + manufacturer
+                + ", drivers=" + drivers
+                + '}';
     }
 
     @Override
@@ -53,8 +60,7 @@ public class Car {
             return false;
         }
         Car car = (Car) o;
-        return Objects.equals(id, car.id)
-                && Objects.equals(model, car.model)
+        return Objects.equals(id, car.id) && Objects.equals(model, car.model)
                 && Objects.equals(manufacturer, car.manufacturer)
                 && Objects.equals(drivers, car.drivers);
     }
@@ -62,14 +68,5 @@ public class Car {
     @Override
     public int hashCode() {
         return Objects.hash(id, model, manufacturer, drivers);
-    }
-
-    @Override
-    public String toString() {
-        return "Car{id=" + id
-                + ", model='" + model + '\''
-                + ", manufacturer=" + manufacturer
-                + ", drivers=" + drivers
-                + '}';
     }
 }
