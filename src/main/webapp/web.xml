@@ -8,6 +8,13 @@
 		 xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 		 xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_4_0.xsd">
 
+	<display-name>Hello welcome world!</display-name>
+
+	<welcome-file-list>
+		<welcome-file>/WEB-INF/views/welcome.jsp</welcome-file>
+		<welcome-file>/WEB-INF/views/index.jsp</welcome-file>
+	</welcome-file-list>
+
 <!--============================================================
 	Controller
 =============================================================-->
