@@ -12,6 +12,8 @@ public class Main {
         for (Manufacturer manufacturer : manufacturers) {
             System.out.println(manufacturer);
         }
-        manufacturerDao.create(new Manufacturer("Ntesr", "Ctest"));
+        Manufacturer savedManufacturer = manufacturerDao
+                .create(new Manufacturer("Ntesr2", "Ctest2"));
+        System.out.println("savedManufacturer = " + savedManufacturer);
     }
 }

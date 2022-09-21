@@ -1,6 +1,7 @@
 package taxi.jdbc.dao;
 
 import java.sql.Connection;
+import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
@@ -15,15 +16,23 @@ import taxi.jdbc.util.ConnectionUtil;
 public class ManufacturerDaoImpl implements ManufacturerDao {
     @Override
     public Manufacturer create(Manufacturer manufacturer) {
+        String insertManufacturerRequest = "INSERT INTO manufacturers(name, country) VALUES(?,?);";
         try (Connection connection = ConnectionUtil.getConnection();
-                Statement createManufacturerStatement = connection.createStatement()) {
-            String insertManufacturerRequest = "INSERT INTO manufacturers(name, country) VALUES('"
-                    + manufacturer.getName() + "', '" + manufacturer.getCountry() + "');";
-            createManufacturerStatement.executeUpdate(insertManufacturerRequest);
+                PreparedStatement createManufacturerStatement =
+                        connection.prepareStatement(insertManufacturerRequest,
+                                Statement.RETURN_GENERATED_KEYS)) {
+            createManufacturerStatement.setString(1,manufacturer.getName());
+            createManufacturerStatement.setString(2,manufacturer.getCountry());
+            createManufacturerStatement.executeUpdate();
+            ResultSet generatedKeys = createManufacturerStatement.getGeneratedKeys();
+            if (generatedKeys.next()) {
+                Long id = generatedKeys.getObject(1, Long.class);
+                manufacturer.setId(id);
+            }
         } catch (SQLException e) {
             throw new RuntimeException("Can't insert manufacturer to DB.", e);
         }
-        return null;
+        return manufacturer;
     }
 
     @Override
@@ -35,7 +44,7 @@ public class ManufacturerDaoImpl implements ManufacturerDao {
     public List<Manufacturer> getAll() {
         List<Manufacturer> allManufacturers = new ArrayList<>();
         try (Connection connection = ConnectionUtil.getConnection();
-                 Statement getAllManufacturersStatement = connection.createStatement()) {
+                Statement getAllManufacturersStatement = connection.createStatement()) {
             ResultSet resultSet = getAllManufacturersStatement
                     .executeQuery("SELECT * FROM manufacturers");
             while (resultSet.next()) {
