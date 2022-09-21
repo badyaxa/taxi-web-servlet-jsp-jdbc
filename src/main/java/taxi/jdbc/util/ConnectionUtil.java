@@ -1,4 +1,4 @@
-package mate.jdbc.util;
+package taxi.jdbc.util;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
@@ -20,7 +20,8 @@ public class ConnectionUtil {
             Properties bdProperties = new Properties();
             bdProperties.put("user", "badyaha");
             bdProperties.put("password", "root");
-            connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/taxi_service_db", bdProperties);
+            connection = DriverManager
+                    .getConnection("jdbc:mysql://localhost:3306/taxi_service_db", bdProperties);
         } catch (SQLException ee) {
             throw new RuntimeException("Can't create connection to DB", ee);
         }
