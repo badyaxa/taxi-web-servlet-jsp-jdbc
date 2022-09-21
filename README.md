@@ -1,30 +1,28 @@
-# HW 03
-- Create class `Driver`.
-```java
-public class Driver {
-    private Long id;
-    private String name;
-    private String licenseNumber;
-}
+# HW 04
+- Create class `Car`.
+- Create `CarService` interface with implementation.
+
+### CarService methods:
+    - Car create(Car car);
+    - Car get(Long id);
+    - List<Car> getAll();
+    - Car update(Car car);
+    - boolean delete(Long id);
+    - void addDriverToCar(Driver driver, Car car);
+    - void removeDriverFromCar(Driver driver, Car car);
+    - List<Car> getAllByDriver(Long driverId);
+
+- Test your solution in the `main` method.
+- Don't forget about a table's and columns' namings.
+- These methods should be only on the service layer: 
 ```
-- Create `ManufacturerService` and its implementation. Annotations `@Service` and `@Inject` have already been given to you.
-### ManufacturerService methods:
-    - Manufacturer create(Manufacturer manufacturer);
-    - Manufacturer get(Long id);
-    - List<Manufacturer> getAll();
-    - Manufacturer update(Manufacturer manufacturer);
-    - boolean delete(Long id);
-- Create Dao and Service layers for `Driver` and their implementations.
-### DriverService methods:
-    - Driver create(Driver driver);
-    - Driver get(Long id);
-    - List<Driver> getAll();
-    - Driver update(Driver driver);
-    - boolean delete(Long id);
+    - void addDriverToCar(Driver driver, Car car);
+    - void removeDriverFromCar(Driver driver, Car car);
+```
 
-- Do not forget about DB naming rules mentioned in previous homework.
-- Test your code in `main`.
-- Main should only contain invocation of `Service` methods, no Dao methods allowed in `main`.
-- Do not forget about Dependency Injection. Use your annotations.
+__Before submitting solution make sure you checked it first with__ [checklist](https://mate-academy.github.io/jv-program-common-mistakes/java-JDBC/join/Joins_checklist.html)
 
-__You can check yourself using this__ [checklist](https://mate-academy.github.io/jv-program-common-mistakes/java-JDBC/dao-vs-service/dao-vs-service_checklist.html)
+![diagram](taxi_models_diagram.jpeg)
+
+![diagram](join-db-diagram.png)
+
