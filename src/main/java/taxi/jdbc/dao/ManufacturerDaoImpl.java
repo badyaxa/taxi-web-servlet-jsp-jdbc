@@ -24,11 +24,9 @@ public class ManufacturerDaoImpl implements ManufacturerDao {
     @Override
     public List<Manufacturer> getAll() {
         List<Manufacturer> allManufacturers = new ArrayList<>();
-        Connection connection = ConnectionUtil.getConnection();
-        Statement getAllMnufacturersStatement = null;
-        try {
-            getAllMnufacturersStatement = connection.createStatement();
-            ResultSet resultSet = getAllMnufacturersStatement.executeQuery("SELECT * FROM manufacturers");
+        try (Connection connection = ConnectionUtil.getConnection();
+             Statement getAllManufacturersStatement = connection.createStatement()) {
+            ResultSet resultSet = getAllManufacturersStatement.executeQuery("SELECT * FROM manufacturers");
             while (resultSet.next()) {
                 Long id = resultSet.getObject("id", Long.class);
                 String name = resultSet.getString("name");
