@@ -2,6 +2,7 @@ package taxi.jdbc.service.impl;
 
 import java.util.List;
 import java.util.NoSuchElementException;
+import java.util.Set;
 import taxi.jdbc.dao.CarDao;
 import taxi.jdbc.lib.Inject;
 import taxi.jdbc.lib.Service;
@@ -43,7 +44,7 @@ public class CarServiceImpl implements CarService {
 
     @Override
     public void addDriverToCar(Driver driver, Car car) {
-        List<Driver> drivers = car.getDrivers();
+        Set<Driver> drivers = car.getDrivers();
         drivers.add(driver);
         car.setDrivers(drivers);
         carDao.update(car);
@@ -51,7 +52,7 @@ public class CarServiceImpl implements CarService {
 
     @Override
     public void removeDriverFromCar(Driver driver, Car car) {
-        List<Driver> drivers = car.getDrivers();
+        Set<Driver> drivers = car.getDrivers();
         drivers.remove(driver);
         car.setDrivers(drivers);
         carDao.update(car);

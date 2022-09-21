@@ -1,13 +1,13 @@
 package taxi.jdbc.model;
 
-import java.util.List;
 import java.util.Objects;
+import java.util.Set;
 
 public class Car {
     private Long id;
     private String model;
     private Manufacturer manufacturer;
-    private List<Driver> drivers;
+    private Set<Driver> drivers;
 
     public Car() {
     }
@@ -36,11 +36,11 @@ public class Car {
         this.manufacturer = manufacturer;
     }
 
-    public List<Driver> getDrivers() {
+    public Set<Driver> getDrivers() {
         return drivers;
     }
 
-    public void setDrivers(List<Driver> drivers) {
+    public void setDrivers(Set<Driver> drivers) {
         this.drivers = drivers;
     }
 
