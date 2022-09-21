@@ -4,8 +4,10 @@
     <title>Title index.jsp</title>
 </head>
 <body>
+    <jsp:include page="header.jsp" />
+
     <h1>It is index.jsp</h1>
-    <a href="/drivers">drivers</a>
-    <a href="/manufacturers">manufacturers</a>
+
+    <jsp:include page="footer.jsp" />
 </body>
 </html>

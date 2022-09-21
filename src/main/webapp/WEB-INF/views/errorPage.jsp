@@ -4,9 +4,10 @@
     <title>Title errorPage.jsp</title>
 </head>
 <body>
+    <jsp:include page="header.jsp" />
+
     <h1>it is 404 page</h1>
-    <a href="/index">HOME</a>
-    <a href="/drivers">drivers</a>
-    <a href="/manufacturers">manufacturers</a>
+
+    <jsp:include page="footer.jsp" />
 </body>
 </html>

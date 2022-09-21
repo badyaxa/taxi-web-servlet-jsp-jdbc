@@ -4,6 +4,10 @@
     <title>Title drivers.jsp</title>
 </head>
 <body>
+    <jsp:include page="header.jsp" />
+
     <h1>Hello, Drivers!</h1>
+
+    <jsp:include page="footer.jsp" />
 </body>
 </html>
