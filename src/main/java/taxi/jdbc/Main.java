@@ -1,8 +1,8 @@
 package taxi.jdbc;
 
 import java.util.List;
-import mate.jdbc.dao.ManufacturerDaoImpl;
 import taxi.jdbc.dao.ManufacturerDao;
+import taxi.jdbc.dao.ManufacturerDaoImpl;
 import taxi.jdbc.model.Manufacturer;
 
 public class Main {
@@ -12,5 +12,6 @@ public class Main {
         for (Manufacturer manufacturer : manufacturers) {
             System.out.println(manufacturer);
         }
+        manufacturerDao.create(new Manufacturer("Ntesr", "Ctest"));
     }
 }
