@@ -12,7 +12,7 @@ import taxi.service.ManufacturerService;
 
 @WebServlet(urlPatterns = "/manufacturers/add")
 public class CreateManufacturerController extends HttpServlet {
-    private static final Injector injector = Injector.getInstance("mate");
+    private static final Injector injector = Injector.getInstance("taxi");
     private ManufacturerService manufacturerService;
 
     @Override

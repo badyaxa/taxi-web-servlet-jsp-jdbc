@@ -12,7 +12,7 @@ import taxi.service.CarService;
 @WebServlet(urlPatterns = "/cars/delete/*")
 public class DeleteCarController extends HttpServlet {
     private static final int ID_POSITION = 1;
-    private static final Injector injector = Injector.getInstance("mate");
+    private static final Injector injector = Injector.getInstance("taxi");
     private CarService carService;
 
     @Override

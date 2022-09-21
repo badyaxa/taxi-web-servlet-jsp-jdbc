@@ -13,7 +13,7 @@ import taxi.service.CarService;
 
 @WebServlet(urlPatterns = "/cars")
 public class GetAllCarController extends HttpServlet {
-    private static final Injector injector = Injector.getInstance("mate");
+    private static final Injector injector = Injector.getInstance("taxi");
     private CarService carService;
 
     @Override

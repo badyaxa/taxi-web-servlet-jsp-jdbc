@@ -17,7 +17,7 @@ import taxi.service.ManufacturerService;
 @WebServlet(urlPatterns = "/cars/*")
 public class GetCarByIdController extends HttpServlet {
     private static final int ID_POSITION = 1;
-    private static final Injector injector = Injector.getInstance("mate");
+    private static final Injector injector = Injector.getInstance("taxi");
     private List<Driver> drivers;
     private ManufacturerService manufacturerService;
     private CarService carService;
