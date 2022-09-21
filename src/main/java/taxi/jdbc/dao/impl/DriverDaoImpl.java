@@ -1,4 +1,4 @@
-package taxi.jdbc.dao;
+package taxi.jdbc.dao.impl;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -8,6 +8,7 @@ import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
+import taxi.jdbc.dao.DriverDao;
 import taxi.jdbc.exception.DataProcessingException;
 import taxi.jdbc.lib.Dao;
 import taxi.jdbc.model.Driver;
