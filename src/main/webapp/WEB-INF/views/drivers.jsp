@@ -1,10 +1,9 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
-    <title>Title index.jsp</title>
+    <title>Title drivers.jsp</title>
 </head>
 <body>
-    <h1>It is index.jsp</h1>
-    <a href="/drivers">Drivers</a>
+    <h1>Hello, Drivers!</h1>
 </body>
 </html>
