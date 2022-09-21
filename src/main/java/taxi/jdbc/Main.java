@@ -2,7 +2,9 @@ package taxi.jdbc;
 
 import java.util.List;
 import taxi.jdbc.lib.Injector;
+import taxi.jdbc.model.Driver;
 import taxi.jdbc.model.Manufacturer;
+import taxi.jdbc.service.DriverService;
 import taxi.jdbc.service.ManufacturerService;
 
 public class Main {
@@ -28,5 +30,26 @@ public class Main {
         /////getAll/////
         List<Manufacturer> manufacturers = manufacturerService.getAll();
         manufacturers.forEach(System.out::println);
+
+        /////////////Driver////////////
+        DriverService driverService = (DriverService)
+                injector.getInstance(DriverService.class);
+        /////create/////
+        Driver bohdan = driverService
+                .create(new Driver(null, "Bohdan", "321654987"));
+        System.out.println("savedDriver = " + bohdan);
+        /////get/////
+        Driver driverBohdan = driverService.get(bohdan.getId());
+        System.out.println("driverBohdan = " + driverBohdan);
+        /////update/////
+        Driver updateBohdan = new Driver(bohdan.getId(), "Bohdan", "951753654");
+        Driver updatedDriver = driverService.update(updateBohdan);
+        System.out.println("updatedDriver = " + updatedDriver);
+        /////delete/////
+        boolean isDeletedDriver = driverService.delete(bohdan.getId());
+        System.out.println("deleteDriver = " + isDeletedDriver);
+        /////getAll/////
+        List<Driver> drivers = driverService.getAll();
+        drivers.forEach(System.out::println);
     }
 }
