@@ -6,8 +6,8 @@ import java.sql.SQLException;
 import java.util.Properties;
 
 public class ConnectionUtil {
-    private static final String URL = "jdbc:mysql://localhost:3306/taxi_service";
-    private static final String USERNAME = "badyaha";
+    private static final String URL = "jdbc:mysql://localhost:3306/taxi";
+    private static final String USERNAME = "badyaxa";
     private static final String PASSWORD = "root";
     private static final String JDBC_DRIVER = "com.mysql.cj.jdbc.Driver";
 
