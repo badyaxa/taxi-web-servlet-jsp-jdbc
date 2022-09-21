@@ -10,14 +10,19 @@ public class Main {
         ManufacturerDao manufacturerDao = new ManufacturerDaoImpl();
         List<Manufacturer> manufacturers = manufacturerDao.getAll();
         for (Manufacturer manufacturer : manufacturers) {
-            if (!manufacturer.isDeleted()){
+            if (!manufacturer.isDeleted()) {
                 System.out.println(manufacturer);
             }
         }
         ///////////////////////////////////////////////
         Manufacturer savedManufacturer = manufacturerDao
-                .create(new Manufacturer("Ntesr2", "Ctest2"));
+                .create(new Manufacturer("Ntesr3", "Ctest3"));
         System.out.println("savedManufacturer = " + savedManufacturer);
+        ///////////////////////////////////////////////
+        boolean delete14 = manufacturerDao.delete(14L);
+        System.out.println("delete14 = " + delete14);
+        boolean delete15 = manufacturerDao.delete(15L);
+        System.out.println("delete15 = " + delete15);
         ///////////////////////////////////////////////
     }
 }
