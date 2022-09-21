@@ -1,8 +1,8 @@
-package taxi.jdbc.dao;
+package taxi.dao;
 
 import java.util.List;
 import java.util.Optional;
-import taxi.jdbc.model.Car;
+import taxi.model.Car;
 
 public interface CarDao {
     Car create(Car car);

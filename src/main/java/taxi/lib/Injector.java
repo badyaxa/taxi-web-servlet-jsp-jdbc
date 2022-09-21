@@ -1,4 +1,4 @@
-package taxi.jdbc.lib;
+package taxi.lib;
 
 import java.io.File;
 import java.io.IOException;

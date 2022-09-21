@@ -1,12 +1,12 @@
-package taxi.jdbc.service.impl;
+package taxi.service.impl;
 
 import java.util.List;
 import java.util.NoSuchElementException;
-import taxi.jdbc.dao.ManufacturerDao;
-import taxi.jdbc.lib.Inject;
-import taxi.jdbc.lib.Service;
-import taxi.jdbc.model.Manufacturer;
-import taxi.jdbc.service.ManufacturerService;
+import taxi.dao.ManufacturerDao;
+import taxi.lib.Inject;
+import taxi.lib.Service;
+import taxi.model.Manufacturer;
+import taxi.service.ManufacturerService;
 
 @Service
 public class ManufacturerServiceImpl implements ManufacturerService {

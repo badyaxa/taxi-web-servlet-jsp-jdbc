@@ -1,4 +1,4 @@
-package taxi.jdbc.dao.impl;
+package taxi.dao.impl;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -10,13 +10,13 @@ import java.util.HashSet;
 import java.util.List;
 import java.util.Optional;
 import java.util.Set;
-import taxi.jdbc.dao.CarDao;
-import taxi.jdbc.exception.DataProcessingException;
-import taxi.jdbc.lib.Dao;
-import taxi.jdbc.model.Car;
-import taxi.jdbc.model.Driver;
-import taxi.jdbc.model.Manufacturer;
-import taxi.jdbc.util.ConnectionUtil;
+import taxi.dao.CarDao;
+import taxi.exception.DataProcessingException;
+import taxi.lib.Dao;
+import taxi.model.Car;
+import taxi.model.Driver;
+import taxi.model.Manufacturer;
+import taxi.util.ConnectionUtil;
 
 @Dao
 public class CarDaoImpl implements CarDao {

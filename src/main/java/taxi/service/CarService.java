@@ -1,8 +1,8 @@
-package taxi.jdbc.service;
+package taxi.service;
 
 import java.util.List;
-import taxi.jdbc.model.Car;
-import taxi.jdbc.model.Driver;
+import taxi.model.Car;
+import taxi.model.Driver;
 
 public interface CarService {
     Car create(Car car);

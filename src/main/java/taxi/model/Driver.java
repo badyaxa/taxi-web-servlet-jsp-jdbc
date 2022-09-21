@@ -1,19 +1,19 @@
-package taxi.jdbc.model;
+package taxi.model;
 
 import java.util.Objects;
 
-public class Manufacturer {
+public class Driver {
     private Long id;
     private String name;
-    private String country;
+    private String licenseNumber;
 
-    public Manufacturer() {
+    public Driver() {
     }
 
-    public Manufacturer(Long id, String name, String country) {
+    public Driver(Long id, String name, String licenseNumber) {
         this.id = id;
         this.name = name;
-        this.country = country;
+        this.licenseNumber = licenseNumber;
     }
 
     public Long getId() {
@@ -32,12 +32,12 @@ public class Manufacturer {
         this.name = name;
     }
 
-    public String getCountry() {
-        return country;
+    public String getLicenseNumber() {
+        return licenseNumber;
     }
 
-    public void setCountry(String country) {
-        this.country = country;
+    public void setLicenseNumber(String licenseNumber) {
+        this.licenseNumber = licenseNumber;
     }
 
     @Override
@@ -48,23 +48,23 @@ public class Manufacturer {
         if (o == null || getClass() != o.getClass()) {
             return false;
         }
-        Manufacturer that = (Manufacturer) o;
-        return Objects.equals(id, that.id)
-                && Objects.equals(name, that.name)
-                && Objects.equals(country, that.country);
+        Driver driver = (Driver) o;
+        return Objects.equals(id, driver.id)
+                && Objects.equals(name, driver.name)
+                && Objects.equals(licenseNumber, driver.licenseNumber);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(id, name, country);
+        return Objects.hash(id, name, licenseNumber);
     }
 
     @Override
     public String toString() {
-        return "Manufacturer{"
+        return "Driver{"
                 + "id=" + id
                 + ", name='" + name + '\''
-                + ", country='" + country + '\''
+                + ", licenseNumber='" + licenseNumber + '\''
                 + '}';
     }
 }

@@ -1,14 +1,14 @@
-package taxi.jdbc.service.impl;
+package taxi.service.impl;
 
 import java.util.List;
 import java.util.NoSuchElementException;
 import java.util.Set;
-import taxi.jdbc.dao.CarDao;
-import taxi.jdbc.lib.Inject;
-import taxi.jdbc.lib.Service;
-import taxi.jdbc.model.Car;
-import taxi.jdbc.model.Driver;
-import taxi.jdbc.service.CarService;
+import taxi.dao.CarDao;
+import taxi.lib.Inject;
+import taxi.lib.Service;
+import taxi.model.Car;
+import taxi.model.Driver;
+import taxi.service.CarService;
 
 @Service
 public class CarServiceImpl implements CarService {

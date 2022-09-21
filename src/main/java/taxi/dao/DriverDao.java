@@ -1,12 +1,13 @@
-package taxi.jdbc.service;
+package taxi.dao;
 
 import java.util.List;
-import taxi.jdbc.model.Driver;
+import java.util.Optional;
+import taxi.model.Driver;
 
-public interface DriverService {
+public interface DriverDao {
     Driver create(Driver driver);
 
-    Driver get(Long id);
+    Optional<Driver> get(Long id);
 
     List<Driver> getAll();
 

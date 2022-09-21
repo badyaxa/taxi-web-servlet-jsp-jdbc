@@ -1,4 +1,4 @@
-package taxi.jdbc.dao.impl;
+package taxi.dao.impl;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -8,11 +8,11 @@ import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
-import taxi.jdbc.dao.DriverDao;
-import taxi.jdbc.exception.DataProcessingException;
-import taxi.jdbc.lib.Dao;
-import taxi.jdbc.model.Driver;
-import taxi.jdbc.util.ConnectionUtil;
+import taxi.dao.DriverDao;
+import taxi.exception.DataProcessingException;
+import taxi.lib.Dao;
+import taxi.model.Driver;
+import taxi.util.ConnectionUtil;
 
 @Dao
 public class DriverDaoImpl implements DriverDao {

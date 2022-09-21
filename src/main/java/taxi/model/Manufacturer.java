@@ -1,19 +1,19 @@
-package taxi.jdbc.model;
+package taxi.model;
 
 import java.util.Objects;
 
-public class Driver {
+public class Manufacturer {
     private Long id;
     private String name;
-    private String licenseNumber;
+    private String country;
 
-    public Driver() {
+    public Manufacturer() {
     }
 
-    public Driver(Long id, String name, String licenseNumber) {
+    public Manufacturer(Long id, String name, String country) {
         this.id = id;
         this.name = name;
-        this.licenseNumber = licenseNumber;
+        this.country = country;
     }
 
     public Long getId() {
@@ -32,12 +32,12 @@ public class Driver {
         this.name = name;
     }
 
-    public String getLicenseNumber() {
-        return licenseNumber;
+    public String getCountry() {
+        return country;
     }
 
-    public void setLicenseNumber(String licenseNumber) {
-        this.licenseNumber = licenseNumber;
+    public void setCountry(String country) {
+        this.country = country;
     }
 
     @Override
@@ -48,23 +48,23 @@ public class Driver {
         if (o == null || getClass() != o.getClass()) {
             return false;
         }
-        Driver driver = (Driver) o;
-        return Objects.equals(id, driver.id)
-                && Objects.equals(name, driver.name)
-                && Objects.equals(licenseNumber, driver.licenseNumber);
+        Manufacturer that = (Manufacturer) o;
+        return Objects.equals(id, that.id)
+                && Objects.equals(name, that.name)
+                && Objects.equals(country, that.country);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(id, name, licenseNumber);
+        return Objects.hash(id, name, country);
     }
 
     @Override
     public String toString() {
-        return "Driver{"
+        return "Manufacturer{"
                 + "id=" + id
                 + ", name='" + name + '\''
-                + ", licenseNumber='" + licenseNumber + '\''
+                + ", country='" + country + '\''
                 + '}';
     }
 }

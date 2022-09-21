@@ -1,15 +1,15 @@
-package taxi.jdbc;
+package taxi;
 
 import java.util.HashSet;
 import java.util.List;
 import java.util.Random;
-import taxi.jdbc.lib.Injector;
-import taxi.jdbc.model.Car;
-import taxi.jdbc.model.Driver;
-import taxi.jdbc.model.Manufacturer;
-import taxi.jdbc.service.CarService;
-import taxi.jdbc.service.DriverService;
-import taxi.jdbc.service.ManufacturerService;
+import taxi.lib.Injector;
+import taxi.model.Car;
+import taxi.model.Driver;
+import taxi.model.Manufacturer;
+import taxi.service.CarService;
+import taxi.service.DriverService;
+import taxi.service.ManufacturerService;
 
 public class Main {
     private static Injector injector = Injector.getInstance("taxi.jdbc");

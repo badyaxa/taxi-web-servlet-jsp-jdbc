@@ -1,12 +1,13 @@
-package taxi.jdbc.service;
+package taxi.dao;
 
 import java.util.List;
-import taxi.jdbc.model.Manufacturer;
+import java.util.Optional;
+import taxi.model.Manufacturer;
 
-public interface ManufacturerService {
+public interface ManufacturerDao {
     Manufacturer create(Manufacturer manufacturer);
 
-    Manufacturer get(Long id);
+    Optional<Manufacturer> get(Long id);
 
     List<Manufacturer> getAll();
 
