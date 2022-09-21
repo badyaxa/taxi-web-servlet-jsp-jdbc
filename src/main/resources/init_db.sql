@@ -21,4 +21,16 @@ INSERT INTO `manufacturers` (`id`, `name`, `country`) VALUES
 (10,'Honda','Japan'),
 (11,'Lexus','Japan');
 
-SELECT * FROM taxi_service_db.manufacturers;
+CREATE TABLE `drivers` (
+                                        `id` BIGINT(11) NOT NULL AUTO_INCREMENT,
+                                        `name` VARCHAR(225) NOT NULL,
+                                        `license_number` VARCHAR(225) NOT NULL,
+                                        `is_deleted` TINYINT NOT NULL DEFAULT 0,
+                                        PRIMARY KEY (`id`));
+
+INSERT INTO `manufacturers` (`id`, `name`, `country`) VALUES
+(1,'Ihor','123456789'),
+(2,'Oleg','852741963');
+
+SELECT * FROM taxi_service.manufacturers;
+SELECT * FROM taxi_service.drivers;

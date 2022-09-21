@@ -6,7 +6,7 @@ import taxi.jdbc.model.Manufacturer;
 import taxi.jdbc.service.ManufacturerService;
 
 public class Main {
-    private static Injector injector = Injector.getInstance("mate.jdbc");
+    private static Injector injector = Injector.getInstance("taxi.jdbc");
 
     public static void main(String[] args) {
         ManufacturerService manufacturerService = (ManufacturerService)
