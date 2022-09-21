@@ -1,6 +1,7 @@
 package taxi.jdbc;
 
 import java.util.List;
+import java.util.Optional;
 import taxi.jdbc.dao.ManufacturerDao;
 import taxi.jdbc.dao.ManufacturerDaoImpl;
 import taxi.jdbc.model.Manufacturer;
@@ -8,21 +9,25 @@ import taxi.jdbc.model.Manufacturer;
 public class Main {
     public static void main(String[] args) {
         ManufacturerDao manufacturerDao = new ManufacturerDaoImpl();
+        /////create/////
+        Manufacturer toyota = manufacturerDao
+                .create(new Manufacturer(null,"Toyota", "Japan"));
+        System.out.println("savedManufacturer = " + toyota);
+        /////get/////
+        Optional<Manufacturer> optionalManufacturerFerrari = manufacturerDao.get(toyota.getId());
+        optionalManufacturerFerrari.ifPresent(System.out::println);
+        /////update/////
+        Manufacturer toyotaWithFirstId = new Manufacturer(null,"Toyota", "Japan");
+        toyotaWithFirstId.setId(toyota.getId());
+        Manufacturer update = manufacturerDao.update(toyotaWithFirstId);
+        System.out.println("update = " + update);
+        /////delete/////
+        boolean isDeletedToyota = manufacturerDao.delete(toyota.getId());
+        System.out.println("deleteToyota = " + isDeletedToyota);
+        /////getAll/////
         List<Manufacturer> manufacturers = manufacturerDao.getAll();
         for (Manufacturer manufacturer : manufacturers) {
-            if (!manufacturer.isDeleted()) {
-                System.out.println(manufacturer);
-            }
+            System.out.println(manufacturer);
         }
-        ///////////////////////////////////////////////
-        Manufacturer savedManufacturer = manufacturerDao
-                .create(new Manufacturer("Ntesr3", "Ctest3"));
-        System.out.println("savedManufacturer = " + savedManufacturer);
-        ///////////////////////////////////////////////
-        boolean delete14 = manufacturerDao.delete(14L);
-        System.out.println("delete14 = " + delete14);
-        boolean delete15 = manufacturerDao.delete(15L);
-        System.out.println("delete15 = " + delete15);
-        ///////////////////////////////////////////////
     }
 }
