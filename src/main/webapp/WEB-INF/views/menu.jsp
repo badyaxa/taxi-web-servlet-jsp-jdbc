@@ -38,31 +38,31 @@
 <div class="dropdown">
     <button class="dropbtn">MAIN</button>
     <div class="dropdown-content">
-        <a href="/index">index</a>
-        <a href="/some-unknown-url">404</a>
+        <a href="${pageContext.request.contextPath}/index">index</a>
+        <a href="${pageContext.request.contextPath}/some-unknown-url">404</a>
     </div>
 </div>
 
 <div class="dropdown">
     <button class="dropbtn">manufacturers</button>
     <div class="dropdown-content">
-        <a href="/manufacturers">get ALL</a>
-        <a href="/manufacturers/add">create/add (POST)</a>
+        <a href="${pageContext.request.contextPath}/manufacturers">get ALL</a>
+        <a href="${pageContext.request.contextPath}/manufacturers/add">create NEW</a>
     </div>
 </div>
 
 <div class="dropdown">
     <button class="dropbtn">cars</button>
     <div class="dropdown-content">
-        <a href="/cars">get ALL</a>
-        <a href="/cars/add">create/add (POST)</a>
+        <a href="${pageContext.request.contextPath}/cars">get ALL</a>
+        <a href="${pageContext.request.contextPath}/cars/add">create NEW</a>
     </div>
 </div>
 
 <div class="dropdown">
     <button class="dropbtn">drivers</button>
     <div class="dropdown-content">
-        <a href="/drivers">get ALL</a>
-        <a href="/drivers/add">create/add (POST)</a>
+        <a href="${pageContext.request.contextPath}/drivers">get ALL</a>
+        <a href="${pageContext.request.contextPath}/drivers/add">create NEW</a>
     </div>
 </div>
