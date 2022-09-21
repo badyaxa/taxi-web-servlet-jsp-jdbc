@@ -6,6 +6,7 @@
 <body>
     <a href="/index">home</a>
     <a href="/drivers">drivers</a>
+    <a href="/manufacturers">manufacturers</a>
     <h5>---------header--------------</h5>
 </body>
 </html>

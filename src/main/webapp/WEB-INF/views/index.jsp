@@ -5,6 +5,7 @@
 </head>
 <body>
     <h1>It is index.jsp</h1>
-    <a href="/drivers">Drivers</a>
+    <a href="/drivers">drivers</a>
+    <a href="/manufacturers">manufacturers</a>
 </body>
 </html>
