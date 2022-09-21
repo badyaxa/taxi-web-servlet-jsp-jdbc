@@ -3,30 +3,6 @@
          xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee
                       http://xmlns.jcp.org/xml/ns/javaee/web-app_4_0.xsd"
          version="4.0">
-    <servlet>
-        <servlet-name>index</servlet-name>
-        <servlet-class>taxi.controller.IndexController</servlet-class>
-    </servlet>
-    <servlet-mapping>
-        <servlet-name>index</servlet-name>
-        <url-pattern>/index</url-pattern>
-    </servlet-mapping>
-    <servlet>
-        <servlet-name>driver</servlet-name>
-        <servlet-class>taxi.controller.DriverController</servlet-class>
-    </servlet>
-    <servlet-mapping>
-        <servlet-name>driver</servlet-name>
-        <url-pattern>/drivers</url-pattern>
-    </servlet-mapping>
-    <servlet>
-        <servlet-name>manufacturer</servlet-name>
-        <servlet-class>taxi.controller.ManufacturerController</servlet-class>
-    </servlet>
-    <servlet-mapping>
-        <servlet-name>manufacturer</servlet-name>
-        <url-pattern>/manufacturers</url-pattern>
-    </servlet-mapping>
 
     <!--============================================================
         Error page
