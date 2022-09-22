@@ -85,6 +85,20 @@ INSERT INTO `taxi`.`cars_drivers` (`car_id`, `driver_id`) VALUES
                                                               (3, 2),
                                                               (1, 3);
 
+-- ----------------------------
+-- Table structure for users
+-- ----------------------------
+DROP TABLE IF EXISTS `users`;
+CREATE TABLE `users` (
+  `login` varchar(255) NOT NULL,
+  `password` varchar(255) CHARACTER SET utf8mb3 COLLATE utf8mb3_general_ci NOT NULL,
+  `is_deleted` bit(1) NOT NULL DEFAULT b'0',
+  PRIMARY KEY (`login`)
+) ENGINE = InnoDB CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Dynamic;
+INSERT INTO `users` (`login`, `password`) VALUES
+                                                    ('login', 'password'),
+                                                    ('bob', 'bobbobbob'),
+                                                    ('bohdan', '12345678');
 SET FOREIGN_KEY_CHECKS = 1;
 
 
@@ -93,6 +107,7 @@ SET FOREIGN_KEY_CHECKS = 1;
 -- SELECT * FROM taxi.cars;
 -- SELECT * FROM taxi.drivers;
 -- SELECT * FROM taxi.cars_drivers;
+-- SELECT * FROM taxi.users;
 
 -- TRUNCATE `taxi`.`cars_drivers`;
 -- TRUNCATE `taxi`.`drivers`;
