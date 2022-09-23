@@ -66,3 +66,7 @@
         <a href="${pageContext.request.contextPath}/drivers/add">create NEW</a>
     </div>
 </div>
+
+<a href="${pageContext.request.contextPath}/logout">
+    <button style="color: red"> LOGOUT </button>
+</a>
