@@ -3,6 +3,15 @@
 ##  Description
 Very simplified application of the taxi service.
 
+## You can get acquainted with the order of development in the relevant branches
+* <a href="https://github.com/badyaxa/taxi/tree/1-jdbc">***1-jdbc***</a>
+* <a href="https://github.com/badyaxa/taxi/tree/2-dao-service">***2-dao-service***</a>
+* <a href="https://github.com/badyaxa/taxi/tree/3-join">***3-join***</a>
+* <a href="https://github.com/badyaxa/taxi/tree/4-web-intro">***4-web-intro***</a>
+* <a href="https://github.com/badyaxa/taxi/tree/5-web-practice">***5-web-practice***</a>
+* <a href="https://github.com/badyaxa/taxi/tree/6-heroku">***6-heroku***</a>
+* <a href="https://github.com/badyaxa/taxi/tree/7-web-security">***7-web-security***</a>
+
 ##  Project structure
 **The project has an N-Tier Architecture**
 - Controller layer - allows to user to work with this application through browser.
@@ -83,5 +92,5 @@ Very simplified application of the taxi service.
     private static final String JDBC_DRIVER = "com.mysql.cj.jdbc.Driver";
 ```
 
-## <a href="https://servlets-taxi.herokuapp.com/">**The link of this project on Heroku**</a>
+##  <a href="https://servlets-taxi.herokuapp.com/">**The link of this project on Heroku**</a>
 =======
