@@ -92,11 +92,11 @@
     </servlet-mapping>
 
     <servlet>
-        <servlet-name>getAllDriverCars</servlet-name>
-        <servlet-class>taxi.controller.driver.GetAllDriverCarsController</servlet-class>
+        <servlet-name>getMyCurrentCars</servlet-name>
+        <servlet-class>taxi.controller.driver.GetMyCurrentCarsController</servlet-class>
     </servlet>
     <servlet-mapping>
-        <servlet-name>getAllDriverCars</servlet-name>
+        <servlet-name>getMyCurrentCars</servlet-name>
         <url-pattern>/drivers/cars</url-pattern>
     </servlet-mapping>
 
