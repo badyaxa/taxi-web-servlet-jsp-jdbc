@@ -93,4 +93,3 @@ Very simplified application of the taxi service.
 ```
 
 ##  <a href="https://servlets-taxi.herokuapp.com/">**The link of this project on Heroku**</a>
-=======
