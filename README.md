@@ -3,27 +3,14 @@
 ##  Description
 Very simplified application of the taxi service.
 
-## You can get acquainted with the order of development in the relevant branches
-* <a href="https://github.com/badyaxa/taxi/tree/1-jdbc">***1-jdbc***</a>
-* <a href="https://github.com/badyaxa/taxi/tree/2-dao-service">***2-dao-service***</a>
-* <a href="https://github.com/badyaxa/taxi/tree/3-join">***3-join***</a>
-* <a href="https://github.com/badyaxa/taxi/tree/4-web-intro">***4-web-intro***</a>
-* <a href="https://github.com/badyaxa/taxi/tree/5-web-practice">***5-web-practice***</a>
-* <a href="https://github.com/badyaxa/taxi/tree/6-heroku">***6-heroku***</a>
-* <a href="https://github.com/badyaxa/taxi/tree/7-web-security">***7-web-security***</a>
-
 ##  Project structure
 **The project has an N-Tier Architecture**
 - Controller layer - allows to user to work with this application through browser.
 - Service layer - is responsible for the business logic of the application.
 - DAO layer - is responsible for communicating with the database.
-- DB - вatabase based on MySQL server.
-- DB diagram:
-
-![schema](https://user-images.githubusercontent.com/16079430/192094368-66fe8ec5-f1af-4f63-9be4-ef20f5715579.jpg)
 
 ## Features
-- registration a new driver
+- register a new driver
 
 ![driver_register](https://user-images.githubusercontent.com/16079430/192092248-a058db57-f5a6-4cf4-b8b8-36237d45f158.jpg)
 
@@ -77,19 +64,11 @@ Very simplified application of the taxi service.
     private static final String JDBC_DRIVER = "JDBC_DRIVER";
 ```
 5. Create the necessary tables in your database using the file init_db.sql
-6. Install [Tomcat] (https://archive.apache.org/dist/tomcat/tomcat-9/v9.0.50/bin/)
-7. Add Tomcat server to configuration and Fix it.
+6. Install [Tomcat](https://archive.apache.org/dist/tomcat/tomcat-9/v9.0.50/bin/)
+7.  Configure Tomcat in your IDEA
 
 ![config](https://user-images.githubusercontent.com/16079430/192093121-3b7b7e06-a758-4e98-b425-deaf35e2c419.jpg)
  
 8. Run project
-
-## Example of parameters for ConnectionUtil.class
-``` java
-    private static final String URL = "jdbc:mysql://localhost:3306/taxi?useUnicode=true&serverTimezone=UTC";
-    private static final String USERNAME = "root";
-    private static final String PASSWORD = "123456";
-    private static final String JDBC_DRIVER = "com.mysql.cj.jdbc.Driver";
-```
 
 ##  <a href="https://servlets-taxi.herokuapp.com/">**The link of this project on Heroku**</a>
