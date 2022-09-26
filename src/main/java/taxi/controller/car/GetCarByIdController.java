@@ -3,7 +3,6 @@ package taxi.controller.car;
 import java.io.IOException;
 import java.util.List;
 import javax.servlet.ServletException;
-import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -14,7 +13,6 @@ import taxi.model.Manufacturer;
 import taxi.service.CarService;
 import taxi.service.ManufacturerService;
 
-@WebServlet(urlPatterns = "/cars/*")
 public class GetCarByIdController extends HttpServlet {
     private static final int ID_POSITION = 1;
     private static final Injector injector = Injector.getInstance("taxi");
