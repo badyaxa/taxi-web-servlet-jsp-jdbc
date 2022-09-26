@@ -53,7 +53,8 @@ public class CreateDriverController extends HttpServlet {
             req.setAttribute("title", "<p style=\"color:red\">this login is to short</p>");
             req.getRequestDispatcher("/WEB-INF/views/driver/create.jsp").forward(req, resp);
         } else if (!password.equals(repeatPassword)) {
-            req.setAttribute("title", "<p style=\"color:red\">password and repeat-password do not match</p>");
+            req.setAttribute("title", "<p style=\"color:red\">"
+                    + "password and repeat-password do not match</p>");
             req.getRequestDispatcher("/WEB-INF/views/driver/create.jsp").forward(req, resp);
         } else if (password.isEmpty()
                 || password.isBlank()
