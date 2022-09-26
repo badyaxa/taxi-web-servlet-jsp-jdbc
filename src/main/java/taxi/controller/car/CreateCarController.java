@@ -37,14 +37,14 @@ public class CreateCarController extends HttpServlet {
     protected void doPost(HttpServletRequest req, HttpServletResponse resp)
             throws ServletException, IOException {
         String model = req.getParameter("model").trim();
-        String manufacturerId = req.getParameter("manufacturer").trim();
+        String manufacturerId = req.getParameter("manufacturer_id").trim();
         if (model.isBlank()
                 || model.isEmpty()
                 || model.length() < 2
                 || manufacturerId.isEmpty()) {
             req.setAttribute("title", "<p style=\"color:red\">enter the correct data</p>");
             req.setAttribute("model", model);
-            req.setAttribute("manufacturerId", manufacturerId);
+            req.setAttribute("manufacturer_id", manufacturerId);
         } else {
             Manufacturer manufacturer = manufacturerService.get(Long.valueOf(manufacturerId));
             Car newCar = new Car();

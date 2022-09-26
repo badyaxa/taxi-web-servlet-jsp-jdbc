@@ -31,7 +31,13 @@ public class CreateDriverController extends HttpServlet {
     protected void doPost(HttpServletRequest req, HttpServletResponse resp)
             throws ServletException, IOException {
         String name = req.getParameter("name").trim();
-        String licenseNumber = req.getParameter("licenseNumber").trim();
+        req.setAttribute("name", name);
+        String licenseNumber = req.getParameter("license_number").trim();
+        req.setAttribute("license_number", licenseNumber);
+        String login = req.getParameter("login").trim().toLowerCase();
+        req.setAttribute("login", login);
+        String password = req.getParameter("password").trim();
+        String repeatPassword = req.getParameter("repeat_password").trim();
         if (name.isBlank()
                 || name.isEmpty()
                 || name.length() < 3
@@ -39,18 +45,31 @@ public class CreateDriverController extends HttpServlet {
                 || licenseNumber.isBlank()
                 || licenseNumber.length() < 3) {
             req.setAttribute("title", "<p style=\"color:red\">enter the correct data</p>");
-            req.setAttribute("name", name);
-            req.setAttribute("licenseNumber", licenseNumber);
+            req.getRequestDispatcher("/WEB-INF/views/driver/create.jsp").forward(req, resp);
+        } else if (!driverService.findByLogin(login).isEmpty()) {
+            req.setAttribute("title", "<p style=\"color:red\">this login is already in use</p>");
+            req.getRequestDispatcher("/WEB-INF/views/driver/create.jsp").forward(req, resp);
+        } else if (login.isEmpty()
+                || login.isBlank()
+                || login.length() < 3) {
+            req.setAttribute("title", "<p style=\"color:red\">this login is to short</p>");
+            req.getRequestDispatcher("/WEB-INF/views/driver/create.jsp").forward(req, resp);
+        } else if (!password.equals(repeatPassword)) {
+            req.setAttribute("title", "<p style=\"color:red\">password and repeat-password do not match</p>");
+            req.getRequestDispatcher("/WEB-INF/views/driver/create.jsp").forward(req, resp);
+        } else if (password.isEmpty()
+                || password.isBlank()
+                || password.length() < 3) {
+            req.setAttribute("title", "<p style=\"color:red\">password is to short</p>");
+            req.getRequestDispatcher("/WEB-INF/views/driver/create.jsp").forward(req, resp);
         } else {
             Driver newDriver = new Driver();
             newDriver.setName(name);
             newDriver.setLicenseNumber(licenseNumber);
-            Driver createdDriver = driverService.create(newDriver);
-            Long id = createdDriver.getId();
-            req.setAttribute("title", "Driver ("
-                    + "<a href='" + id + "'>" + name + "</a>"
-                    + ") has been successfully created,<br> do you want to create another one?");
+            newDriver.setLogin(login);
+            newDriver.setPassword(password);
+            driverService.create(newDriver);
+            resp.sendRedirect(req.getContextPath() + "/login");
         }
-        req.getRequestDispatcher("/WEB-INF/views/driver/create.jsp").forward(req, resp);
     }
 }

@@ -67,6 +67,10 @@
     </div>
 </div>
 
+<a href="${pageContext.request.contextPath}/drivers/cars">
+    <button style="color: red">MY CARS</button>
+</a>
+
 <a href="${pageContext.request.contextPath}/logout">
-    <button style="color: red"> LOGOUT </button>
+    <button style="color: red">LOGOUT</button>
 </a>

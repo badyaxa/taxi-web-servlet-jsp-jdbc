@@ -5,9 +5,7 @@
 </head>
 <body>
     <jsp:include page="header.jsp" />
-
-    <h1>it is 404 page</h1>
-
+    <h1 style="color: red">it is 404 page</h1>
     <jsp:include page="footer.jsp" />
 </body>
 </html>

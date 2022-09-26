@@ -26,11 +26,10 @@ public class GetDriverByIdController extends HttpServlet {
             throws ServletException, IOException {
         String id = req.getPathInfo().split("/")[ID_POSITION];
         Driver driver = driverService.get(Long.valueOf(id));
-        String name = driver.getName();
-        String licenseNumber = driver.getLicenseNumber();
         req.setAttribute("id", id);
-        req.setAttribute("name", name);
-        req.setAttribute("licenseNumber", licenseNumber);
+        req.setAttribute("name", driver.getName());
+        req.setAttribute("license_number", driver.getLicenseNumber());
+        req.setAttribute("login", driver.getLogin());
         req.getRequestDispatcher("/WEB-INF/views/driver/edit.jsp").forward(req, resp);
     }
 
@@ -42,12 +41,13 @@ public class GetDriverByIdController extends HttpServlet {
         updatedDriver.setId(Long.valueOf(id));
         String name = req.getParameter("name");
         updatedDriver.setName(name);
-        String licenseNumber = req.getParameter("licenseNumber");
+        String licenseNumber = req.getParameter("license_number");
         updatedDriver.setLicenseNumber(licenseNumber);
         Driver driver = driverService.update(updatedDriver);
         req.setAttribute("id", id);
         req.setAttribute("name", driver.getName());
-        req.setAttribute("licenseNumber", driver.getLicenseNumber());
+        req.setAttribute("license_number", driver.getLicenseNumber());
+        req.setAttribute("login", driver.getLogin());
         req.setAttribute("title", "Driver ("
                 + name + "/" + licenseNumber
                 + ") has been successfully updated");
