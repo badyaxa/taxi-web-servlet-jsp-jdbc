@@ -1,17 +1,95 @@
-# Web security
-- To get the actual parameters of the database tables, run script from the resources/init_db.sql file in the Workbench.
-- Add two more fields (`login` and `password`) to your `Driver` class.
-  We will simplify the task, and our Driver will behave as User.
-- Modify the required JSP pages and corresponding controllers to support two new fields: `login` and `password`.
-- Modify `DriverDaoImpl` and `CarDaoImpl` to fetch all columns for drivers, including new ones.
-- Create new AuthenticationService with method ```Driver login(String login, String password);```
-- Create new method ```Optional<Driver> findByLogin(String login)``` in DriverDao and DriverService.
-- Use your new method _findByLogin_ in the ```authService.login(login, password)``` method to identify the user based on the login
-- Implement `LoginController` with corresponding JSP page
-- Implement `LogoutController` and add a corresponding button on all pages where it should be
-- Implement user authentication based on HttpSession and filters. Only `LoginController` and `CreateDriverController` should be available for non authenticated users.
-- Having information about currently logged-in user (e.g. driver), please implement the following controller `GetMyCurrentCarsController`.
-  This controller is responsible for displaying the list of cars for currently logged driver (get info about the driver from the HttpSession).
-  Hint: Use existed JSP page for displaying all cars.
+# 🚖 <a href="https://servlets-taxi.herokuapp.com/">**TAXI-SERVICE (web servlets)**</a> 🚖
 
-__You can check yourself using this__ [checklist](https://mate-academy.github.io/jv-program-common-mistakes/java-web/web-security/java-web-security)
+##  Description
+Very simplified application of the taxi service.
+
+## You can get acquainted with the order of development in the relevant branches
+* <a href="https://github.com/badyaxa/taxi/tree/1-jdbc">***1-jdbc***</a>
+* <a href="https://github.com/badyaxa/taxi/tree/2-dao-service">***2-dao-service***</a>
+* <a href="https://github.com/badyaxa/taxi/tree/3-join">***3-join***</a>
+* <a href="https://github.com/badyaxa/taxi/tree/4-web-intro">***4-web-intro***</a>
+* <a href="https://github.com/badyaxa/taxi/tree/5-web-practice">***5-web-practice***</a>
+* <a href="https://github.com/badyaxa/taxi/tree/6-heroku">***6-heroku***</a>
+* <a href="https://github.com/badyaxa/taxi/tree/7-web-security">***7-web-security***</a>
+
+##  Project structure
+**The project has an N-Tier Architecture**
+- Controller layer - allows to user to work with this application through browser.
+- Service layer - is responsible for the business logic of the application.
+- DAO layer - is responsible for communicating with the database.
+- DB - вatabase based on MySQL server.
+- DB diagram:
+
+![schema](https://user-images.githubusercontent.com/16079430/192094368-66fe8ec5-f1af-4f63-9be4-ef20f5715579.jpg)
+
+## Features
+- registration a new driver
+
+![driver_register](https://user-images.githubusercontent.com/16079430/192092248-a058db57-f5a6-4cf4-b8b8-36237d45f158.jpg)
+
+- authentication
+
+![login](https://user-images.githubusercontent.com/16079430/192093492-71ab79c8-2709-4d05-a4f6-3ab880776bfa.jpg)
+
+- display list of all manufacturers, create, update, delete manufacturers
+
+![manufacturer_create](https://user-images.githubusercontent.com/16079430/192093849-16c9f2d3-ccdd-4c5c-b182-50f523776062.jpg)
+
+![manufacturers](https://user-images.githubusercontent.com/16079430/192092254-ee54c328-d03a-4643-a786-236cbca1c9b4.jpg)
+
+- display list of all cars, create, update, delete cars
+
+![car_create](https://user-images.githubusercontent.com/16079430/192092246-13389277-2675-4a2e-916d-6d40dfa61470.jpg)
+
+![cars](https://user-images.githubusercontent.com/16079430/192092247-029cfbbb-b27d-47e0-9d21-ebfabaa5d85d.jpg)
+
+- add driver to car / remove driver from car
+
+![car_drivers_can_add](https://user-images.githubusercontent.com/16079430/192093125-dfec9663-e944-4569-9aef-5214cfe88f8b.jpg)
+
+![car_drivers_add_full_can_not_add](https://user-images.githubusercontent.com/16079430/192093123-5a69ff65-8206-40db-b29d-36af6d49eccf.jpg)
+
+![car_drivers_add_empty_can_add](https://user-images.githubusercontent.com/16079430/192093124-35075e02-12ad-4437-97cd-ee3d0be1a25f.jpg)
+
+- display list of all drivers, cars of current driver
+
+![drivers](https://user-images.githubusercontent.com/16079430/192092250-e7531aa3-5e02-4789-afba-0eca8101b900.jpg)
+
+![my_cars](https://user-images.githubusercontent.com/16079430/192093495-5e0641fc-531f-47e1-823c-6247fd5057e7.jpg)
+
+## Technologies
+- Java 11
+- Maven
+- MySQL
+- JDBC
+- Tomcat v9.0.50
+- JSP
+
+## Quickstart
+1. Fork this repository
+2. Copy link of project
+3. Create new project from Version Control
+4. Edit ConnectionUtil.class - set the necessary parameters
+``` java
+    private static final String URL = "URL";
+    private static final String USERNAME = "USERNAME"; 
+    private static final String PASSWORD = "PASSWORD";
+    private static final String JDBC_DRIVER = "JDBC_DRIVER";
+```
+5. Create the necessary tables in your database using the file init_db.sql
+6. Install [Tomcat] (https://archive.apache.org/dist/tomcat/tomcat-9/v9.0.50/bin/)
+7. Add Tomcat server to configuration and Fix it.
+
+![config](https://user-images.githubusercontent.com/16079430/192093121-3b7b7e06-a758-4e98-b425-deaf35e2c419.jpg)
+ 
+8. Run project
+
+## Example of parameters for ConnectionUtil.class
+``` java
+    private static final String URL = "jdbc:mysql://localhost:3306/taxi?useUnicode=true&serverTimezone=UTC";
+    private static final String USERNAME = "root";
+    private static final String PASSWORD = "123456";
+    private static final String JDBC_DRIVER = "com.mysql.cj.jdbc.Driver";
+```
+
+##  <a href="https://servlets-taxi.herokuapp.com/">**The link of this project on Heroku**</a>
